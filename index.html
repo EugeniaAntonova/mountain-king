@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The king of the mountain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main class="out-of-header">
+        <section class="k-section k-container hero">
+            <button type="button" class="button refresh-button js-refresh-btn" title="Обновить страницу">
+                <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="m13.08 8.455-.043-2.303 4.195.11.937-.937-.11-4.194 2.303.042.127 5.148-2.261 2.262-5.149-.128ZM9.92 12.779l.042 2.303-4.194-.11-.936.937.11 4.195-2.304-.042-.127-5.149 2.261-2.261 5.149.127Z"
+                        fill="#EDA623" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.724 1.383h8.521l4.093 4.093-1.956 1.955L14.1 4.15H7.87L4.992 7.026v3.115H2.227v-4.26l4.497-4.498ZM16.276 19.852H7.755l-4.093-4.093 1.956-1.956L8.9 17.086h6.23l2.878-2.878v-3.115h2.765v4.26l-4.497 4.499Z"
+                        fill="#EDA623" />
+                </svg>
+            </button>
+            <div class="hero__intro">
+                <h1 class="visually-hidden">Лото-гонка "Царь горы"</h1>
+                <img draggable="false" class="intro__main-logo" src="./assets/main-logo.svg" alt="Лото-гонка Царь горы"
+                    width="241" height="122">
+                <div class="hero__info">
+                    <p class="info__item prize">
+                        <span class="icon"></span>
+                        <span class="title">Главный приз:</span>
+                        <span class="value">1&nbsp;000&nbsp;000&nbsp;&#8376;</span>
+                    </p>
+                    <p class="info__item deadline">
+                        <span class="icon"></span>
+                        <span class="title">До старта:</span>
+                        <span class="value">2д. 12ч. 45м.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="hero__mountain">
+                <div class="list rating" role="list">
+                    <div role="listitem" class="item rating__item winner">
+                        <strong class="nick">Lorem.</strong>
+                        <span class="score">
+                            Очки: <span class="value js-score-value">4 468</span>
+                        </span>
+                        <span class="prize">
+                            <span class="cup-icon"></span>
+                            <span class="value">1&nbsp;000&nbsp;000&nbsp;&#8376;</span>
+                        </span>
+                        <div class="avatar">
+                            <img draggable="false" class="avatar__img" src="./dog.jpg" alt="">
+                        </div>
+                    </div>
+                    <div role="listitem" class="item rating__item">
+                        <strong class="nick">Lorem.</strong>
+                        <span class="score">
+                            Очки: <span class="value js-score-value">4 468</span>
+                        </span>
+                        <span class="prize">
+                            <span class="cup-icon"></span>
+                            <span class="value">25 000</span>
+                            <span class="bonus-icon"></span>
+                        </span>
+                    </div>
+                    <div role="listitem" class="item rating__item">
+                        <strong class="nick">Lorem.</strong>
+                        <span class="score">
+                            Очки: <span class="value js-score-value">4 468</span>
+                        </span>
+                        <span class="prize">
+                            <span class="cup-icon"></span>
+                            <span class="value">25 000</span>
+                            <span class="bonus-icon"></span>
+                        </span>
+                    </div>
+                    <div role="listitem" class="item rating__item">
+                        <strong class="nick">Lorem.</strong>
+                        <span class="score">
+                            Очки: <span class="value js-score-value">4 468</span>
+                        </span>
+                        <span class="prize">
+                            <span class="cup-icon"></span>
+                            <span class="value">25 000</span>
+                            <span class="bonus-icon"></span>
+                        </span>
+                    </div>
+                    <div role="listitem" class="item rating__item">
+                        <strong class="nick">Lorem.</strong>
+                        <span class="score">
+                            Очки: <span class="value js-score-value">4 468</span>
+                        </span>
+                        <span class="prize">
+                            <span class="cup-icon"></span>
+                            <span class="value">25 000</span>
+                            <span class="bonus-icon"></span>
+                        </span>
+                    </div>
+                </div>
+                <picture>
+                    <source media="(min-width: 700px)"
+                        srcset="./assets/mountain-desk-1x.avif 1x, ./assets/mountain-desk-2x.avif 2x" type="image/avif">
+                    <source media="(min-width: 700px)"
+                        srcset="./assets/mountain-desk-1x.png 1x, ./assets/mountain-desk-2x.png 2x" type="image/png">
+                    <source srcset="./assets/mountain-1x.avif 1x, ./assets/mountain-2x.avif 2x" type="image/avif">
+                    <img draggable="false" src="./assets/mountain-1x.png" srcset="./assets/mountain-2x.png 2x"
+                        alt="Гора с золотой вершиной" width="383" height="470">
+                </picture>
+                <div class="conditions">
+                    <strong class="condition"><span
+                            class="asterisk">*</span>Каждые&nbsp;выигранные&nbsp;500&nbsp;&#8376;
+                        =&nbsp;1&nbsp;очко&nbsp;рейтинга</strong>
+                </div>
+            </div>
+        </section>
+        <section class="k-section k-container my-place">
+            <div class="bottom-wrapper">
+                <div class="bottom">
+                    <a href="#" class="link to-account" title="Редактировать профиль в личном кабинете">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.7356 2.09923L2.94644 7.1684C2.76561 7.3609 2.59061 7.74006 2.55561 8.00256L2.33977 9.89256C2.26394 10.5751 2.75394 11.0417 3.43061 10.9251L5.30894 10.6042C5.57144 10.5576 5.93894 10.3651 6.11977 10.1667L10.9089 5.09756C11.7373 4.22256 12.1106 3.22506 10.8214 2.0059C9.5381 0.798398 8.56394 1.22423 7.7356 2.09923Z"
+                                stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M6.9375 2.94531C7.18833 4.55531 8.495 5.78615 10.1167 5.94948" stroke="black"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1.75 12.834H9.91667" stroke="black" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <div class="avatar">
+                        <img src="./ewan2.jpg" alt="">
+                    </div>
+                    <h2 class="title my-place__title">
+                        Мое место &mdash; <span class="place js-my-place">65468</span>
+                    </h2>
+                    <div class="my-place__content">
+                        <p class="content__item nick">
+                            <span class="title">Никнейм:</span>
+                            <span class="value js-my-place-nick">Loremipsum.</span>
+                        </p>
+                        <p class="content__item won">
+                            <span class="title">Выиграно:</span>
+                            <span class="value js-my-place-won">468&nbsp;468&nbsp;&#8376;</span>
+                        </p>
+                        <p class="content__item score">
+                            <span class="title">Очки:</span>
+                            <span class="value js-my-place-score">165 464</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="k-section k-container game">
+            <div class="game-wrapper">
+                <div class="game__card">
+                    <img src="./assets/bingo-mingo-logo.svg" alt="Bingo mingo" class="game__logo">
+                    <p class="game-slogan">
+                        Выигрывай в&nbsp;лотерее Bingo&nbsp;mingo и становись ЦАРЕМ&nbsp;ГОРЫ!
+                    </p>
+                    <a href="#" class="k-link k-button">Участвовать</a>
+                </div>
+            </div>
+            <div class="conditions">
+                <a href="#" class="k-link k-download">Условия проведения</a>
+            </div>
+        </section>
+        <section class="k-section k-container faq">
+            <h2 class="title visually-hidden">Часто задаваемые вопросы:</h2>
+            <div class="faq__decor">
+                <picture>
+                    <source media="(min-width: 600px)"
+                        srcset="./assets/faq-desk-1x.avif 1x, ./assets/faq-desk-2x.avif 2x" type="image/avif">
+                    <source media="(min-width: 600px)" srcset="./assets/faq-desk-1x.png 1x, ./assets/faq-desk-2x.png 2x"
+                        type="image/png">
+                    <source srcset="./assets/faq-1x.avif 1x, ./assets/faq-2x.avif 2x" type="image/avif">
+                    <img src="./assets/faq-1x.png" srcset="./assets/faq-2x.png 2x" alt="FAQ" width="237" height="122"
+                        class="title-image">
+                </picture>
+            </div>
+            <div class="faq-list" role="list">
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+                <div role="listitem">
+                    <button type="button" class="js-toggle secondary-button"><span>Что такое
+                            "LotoDrive&nbsp;Halloween"</span></button>
+                    <div class="panel">
+                        <p>
+                            Завершаем лето яркой лотогонкой! &laquo;LotoDrive&nbsp;Halloween&raquo;&nbsp;&mdash;
+                            это
+                            акция для всех любителей классических лотерей.
+                        </p>
+                        <p>
+                            Покупайте билеты классических лотерей TeleBingo, Loto 6/49, 777, SuperLoto, Keno,
+                            Keno2, 4/20 и 8/20 получайте очки рейтинга за&nbsp;покупки. Призовой фонд будет
+                            распределен среди 100&nbsp;участников, которые наберут наибольшее количество очков.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq__bottom">
+                <button class="button to-top-button js-top-btn" title="К началу страницы">
+                    <svg width="60" height="66" viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="bg"
+                            d="M56.97 15.389 31.869.997a3.76 3.76 0 0 0-3.738 0L3.028 15.39a3.714 3.714 0 0 0-1.872 3.22V47.39c0 1.33.715 2.557 1.872 3.22L28.13 65.004a3.76 3.76 0 0 0 3.738 0L56.971 50.61a3.714 3.714 0 0 0 1.871-3.22V18.61c0-1.33-.715-2.557-1.871-3.22Z"
+                            stroke="#007B41" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="m41.656 26.676-2.973 3.084-7.795-8.084h-2.463L20.63 29.76l-2.974-3.084 9.027-9.36h5.947l9.026 9.36Z"
+                            fill="#007B41" />
+                        <path fill="#007B41" d="M32.324 48.871h-4.889V25.316h4.89z" />
+                    </svg>
+                </button>
+                <a href="#" class="k-link k-button">Участвовать</a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

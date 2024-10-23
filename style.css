@@ -1,0 +1,1090 @@
+:root {
+    --green: #00733D;
+    --black: #121212;
+    --bonus: #38A57C;
+    --gold: #EDA623;
+    --white: #fff;
+    --button-gradient: linear-gradient(90deg, #EDA623, #C2EE3F);
+
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+button,
+.button {
+    display: block;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.k-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+* {
+    user-select: text;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.k-button {
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: .6rem;
+    color: var(--black);
+    background: var(--button-gradient);
+    text-align: center;
+    transition: .3s ease-in-out;
+    transition-property: filter, box-shadow;
+}
+
+@media (hover: hover) {
+    .k-button:is(:hover, :focus-visible) {
+        filter: brightness(1.2);
+        box-shadow: 0 0 10px rgba(255 255 255 / .5);
+    }
+}
+.k-button:active {
+    filter: brightness(.9);
+    box-shadow: 0 0 5px rgba(255 255 255 / .7);
+}
+
+.out-of-header {
+    min-height: 100svh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.k-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+
+/* ====================================================== hero */
+
+.hero {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+
+    position: relative;
+    background-image: radial-gradient(ellipse 20% 60% at center, #008145a3, transparent);
+}
+
+.refresh-button {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: auto;
+}
+
+.refresh-button svg {
+    pointer-events: none;
+    width: 24px;
+    height: auto;
+    transition: .3s ease-in-out;
+}
+
+@media (hover: hover) {
+    .refresh-button:is(:hover, :focus-visible):not(:active) svg{
+        rotate: -20deg;
+    }
+    .refresh-button:is(:hover, :focus-visible):not(:active) svg path{
+        fill: #ffbb3d;
+    }
+}
+.refresh-button:active svg{
+    rotate: 360deg;
+}
+.refresh-button:active svg path{
+    fill: #9c6e17;
+}
+
+.k-container.hero {
+    max-width: 760px;
+}
+
+.hero__intro {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.intro__main-logo {
+    width: 67vw;
+    max-width: 460px;
+    height: auto;
+}
+
+.hero__info {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: url(./assets/net.svg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.info__item {
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "icon title"
+        "icon value"
+    ;
+    gap: .4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: .03em;
+}
+
+.info__item .icon {
+    align-self: center;
+    grid-area: icon;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.info__item .title {
+    grid-area: title;
+    align-self: end;
+    text-transform: uppercase;
+    font-size: .6rem;
+    white-space: nowrap;
+    opacity: .6;
+}
+
+.info__item .value {
+    grid-area: value;
+    font-size: .75rem;
+    align-self: start;
+    white-space: nowrap;
+}
+
+.info__item.prize .icon {
+    width: 37px;
+    height: 35px;
+    background-image: url(./assets/icons/prize.svg);
+}
+
+.info__item.deadline .icon {
+    width: 27px;
+    height: 35px;
+    background-image: url(./assets/icons/deadline.svg);
+}
+
+.hero__mountain {
+    display: grid;
+    margin-bottom: 4rem;
+    grid-template-rows: 165px 1fr 130px;
+    place-content: stretch;
+
+    background-image: radial-gradient(circle at center, #008145 30px, transparent 150px);
+    background-position: 0px -85px;
+}
+
+.hero__mountain :where(picture, img) {
+    grid-area: 2 / 1 / -1 / -1;
+    place-self: center;
+    width: 100%;
+}
+
+.rating {
+    counter-reset: rating-counter;
+
+    grid-area: 1 / 1 / -1 / -1;
+    display: grid;
+    grid-template-rows: 165px;
+    justify-items: center;
+    align-items: center;
+}
+
+.rating__item {
+    counter-increment: rating-counter;
+
+    display: grid;
+    position: relative;
+    line-height: 1.2;
+}
+
+.rating__item:nth-of-type(2) {
+    translate: 120% 0%;
+}
+
+.rating__item:nth-of-type(3) {
+    translate: -120% -80%;
+}
+
+.rating__item:nth-of-type(4) {
+    translate: 100% -100%;
+}
+
+.rating__item:nth-of-type(5) {
+    translate: -80% -190%;
+}
+
+.rating__item.winner {
+    grid-area: 1 / 1 / 2 / -1;
+}
+
+.rating__item:not(:first-of-type) {
+    width: fit-content;
+    padding: 1.3rem .4rem .4rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+
+    font-size: .8rem;
+    color: var(--black);
+}
+
+
+.rating__item:not(:first-of-type)::before {
+    content: counter(rating-counter);
+
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 9 / 10;
+    top: 0;
+    left: 50%;
+    translate: -50% -50%;
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./assets/bg.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.rating__item :where(.nick, .value) {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.rating__item .prize {
+    display: flex;
+    gap: .25rem;
+}
+
+.rating__item .prize .value {
+    color: var(--bonus);
+    margin-left: auto;
+}
+
+.rating__item:not(:first-of-type) .cup-icon {
+    width: 1rem;
+    aspect-ratio: 10 / 8;
+    background-image: url(./assets/icons/cup-dark.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.rating__item.winner {
+    padding: .8rem 2rem 0;
+    justify-items: center;
+    text-align: center;
+    justify-self: center;
+    align-self: start;
+    left: 1rem;
+
+    background-image: url(./assets/left-line.svg), url(./assets/right-line.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left, right;
+}
+
+.rating__item .bonus-icon {
+    width: .65rem;
+    aspect-ratio: 1 / 1;
+    background-image: url(./assets/icons/bonus.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.rating__item.winner .nick {
+    font-size: 1rem;
+}
+
+.rating__item.winner .score {
+    margin-bottom: 0.3rem;
+    font-size: .7rem;
+}
+
+.rating__item.winner .prize .value {
+    color: var(--gold);
+}
+
+.rating__item.winner .cup-icon {
+    width: 1.5rem;
+    aspect-ratio: 10 / 8;
+    background-image: url(./assets/icons/cup.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.rating__item .avatar,
+.my-place .avatar {
+    margin-top: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    aspect-ratio: 9 / 10;
+    background: url(./assets/polygon.svg) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.rating__item .avatar img,
+.my-place .avatar img {
+    position: relative;
+    z-index: 2;
+    width: 86px;
+    height: 96px;
+    object-fit: cover;
+    object-position: center center;
+
+    mask-image: url('./assets/bg.png');
+    mask-size: 86px 96px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.rating__item .avatar::before,
+.my-place .avatar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 87px;
+    aspect-ratio: 9 / 10;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm0 6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5H5Z' fill='%23EDA624'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: 50% 50%;
+}
+
+.hero .conditions {
+    display: flex;
+    justify-content: center;
+
+    padding-block: 100px 90px;
+    grid-area: 2 / 1 / 5 / -1;
+
+    align-self: end;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-image: linear-gradient(180deg, transparent 0%, rgba(18, 18, 18, 0.91) 40%);
+}
+
+.condition {
+    max-width: 300px;
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+.condition .asterisk {
+    font-size: 2.5rem;
+    line-height: .1;
+    color: var(--white);
+    vertical-align: bottom;
+}
+
+/* ================================================== my place */
+.my-place {
+    margin-bottom: 1rem;
+}
+
+.my-place__title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.my-place__title>span {
+    font-size: 1.2rem;
+}
+
+.my-place .bottom-wrapper,
+.game-wrapper {
+    height: fit-content;
+    border-radius: .65rem;
+    padding: 1px;
+    background-image: linear-gradient(-16deg, #002E18, #FFFFFF);
+    box-shadow: 0 4px 20px #043E23;
+}
+
+.my-place .bottom {
+    padding-top: 85px;
+}
+
+.my-place .bottom,
+.game__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--black);
+    border-radius: .6rem;
+
+    background-image: linear-gradient(var(--black) 60%, #034a29);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.my-place .avatar {
+    position: absolute;
+    top: 0;
+    translate: 0 -50%;
+}
+
+.my-place__content {
+    display: grid;
+    padding: 1rem 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background-image: url(./assets/net.svg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: .6rem;
+}
+
+.my-place .content__item {
+    display: grid;
+    gap: .5rem;
+    justify-items: start;
+    text-transform: uppercase;
+}
+
+.my-place .content__item .title {
+    font-size: .5rem;
+    font-weight: 600;
+}
+
+.my-place .content__item .value {
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.to-account {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
+    background: var(--gold) var(--button-gradient);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.to-account svg {
+    pointer-events: none;
+}
+
+/*====================================== game */
+.game {
+    padding-block: 4rem;
+}
+
+.game-wrapper {
+    margin-bottom: 1rem;
+}
+
+.game__card {
+    gap: 1.3rem;
+    padding: 1rem;
+    background-image: linear-gradient(var(--black) 30%, #034a29);
+    backdrop-filter: blur(20px);
+}
+
+.game-slogan {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 800;
+}
+
+.game__logo {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+}
+
+.game__card .k-button {
+    width: 100%;
+}
+
+.game .conditions {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    background-image: url(./assets/net.svg);
+    background-size: cover;
+    border-radius: .6rem;
+}
+
+.k-download {
+    padding: .5rem;
+    background-color: var(--black);
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: center;
+    transition: all .3s ease-in-out
+}
+
+@media (hover:hover) {
+    .k-download:is(:hover, :focus-visible) {
+        text-decoration: none;
+        color: #fff
+    }
+}
+
+.k-download:active {
+    text-decoration: underline;
+    color: rgba(255 255 255 / .8)
+}
+
+.k-download::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='19' viewBox='0 0 14 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m0 12.947 1.735-1.799 4.547 4.716h1.436l4.547-4.716 1.735 1.8-5.265 5.46h-3.47L0 12.948Z' fill='%23fff'/%3E%3Cpath fill='%23fff' d='M5.445 0h2.852v13.741H5.445z'/%3E%3C/svg%3E");
+    vertical-align: middle;
+    margin-right: .5ch
+}
+
+/* ===================================================== faq */
+.faq {
+    padding-bottom: 3rem;
+    background-image: radial-gradient(ellipse 150px 200px, rgb(0, 129, 69), transparent), linear-gradient(3deg, transparent, var(--black) 22%), url('./assets/stone-bottom.png');
+    background-repeat: no-repeat;
+    background-size: cover, cover, contain;
+    background-position: 0px -240px, center bottom, center bottom -76px;
+}
+.faq .title-image {
+    width: 100%;
+    max-width: 482px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.faq__decor {
+    margin-bottom: 1.5rem;
+    
+}
+
+.faq-list {
+    margin-bottom: 2rem;
+}
+
+.faq-list>div {
+    background-image: linear-gradient(var(--black), rgba(0, 115, 61, .55));
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 400;
+    line-height: 1.3
+}
+
+.faq-list>div button {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: var(--green);
+}
+
+@media (hover: hover) {
+    .faq-list>div button:is(:hover, :focus-visible) {
+        filter: brightness(1.3);
+    }
+}
+
+.faq-list>div button:active {
+    filter: brightness(.9);
+}
+
+.faq-list>div>button::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 7.522 2.478 10l6.496-6.496h2.052L17.522 10 20 7.522 12.478 0H7.522L0 7.522Z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 50% 50%;
+    vertical-align: middle;
+    margin-left: auto;
+    rotate: 180deg;
+    transition: rotate .3s ease-in-out
+}
+
+.faq-list>div.opened>button::after {
+    rotate: 0deg
+}
+
+.faq-list>div:not(:last-of-type),
+.prizes-table-content:not(:last-of-type) {
+    margin-bottom: 10px
+}
+
+.faq-list>div button {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    border: none;
+    outline-color: #fff;
+    outline-offset: -3px;
+}
+
+.faq-list>div button>span {
+    max-width: 80%;
+    pointer-events: none
+}
+
+.faq-list>div .panel {
+    padding: 0 1em;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 14px;
+    transition: max-height .5s ease-in-out, padding .5s ease-in-out
+}
+
+.faq-list>div .panel :is(p, h3, li) {
+    font-size: .75rem
+}
+
+.faq-list>div .panel h3 {
+    font-size: 1em;
+    font-weight: 800;
+    margin: 0 0 .5em
+}
+
+.faq-list>div .panel p {
+    margin: 0
+}
+
+.faq-list>div .panel p:not(:last-of-type) {
+    margin-bottom: 1.2em
+}
+
+.faq-list>div.opened .panel {
+    padding: 1em
+}
+
+.to-top-button {
+    width: 3.5rem;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.to-top-button svg {
+    transition: .3s ease-in-out;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+@media (hover: hover) {
+    .to-top-button:is(:hover, :focus-visible) svg path {
+        stroke: #03c068;
+    }
+    .to-top-button:is(:hover, :focus-visible) svg path:not(.bg) {
+        fill: #03c068;
+    }
+}
+.to-top-button:active svg path {
+    stroke: #015f33;
+}
+.to-top-button:active svg path:not(.bg) {
+    fill: #015f33;
+}
+
+@media (min-width:500px) {
+    /* hero */
+
+    .rating__item:nth-of-type(2) {
+        translate: 148% 36%;
+    }
+
+    .rating__item:nth-of-type(3) {
+        translate: -120% -80%;
+    }
+
+    .rating__item:nth-of-type(4) {
+        translate: 124% -116%;
+    }
+
+    .rating__item:nth-of-type(5) {
+        translate: -86% -224%;
+    }
+}
+
+@media (min-width: 650px) {
+    html {
+        font-size: 18px;
+    }
+
+    .k-container {
+        padding-inline: 2rem;
+    }
+
+}
+
+@media (min-width: 720px) {
+    .k-button {
+        padding: 2rem 3rem;
+        font-size: 2rem;
+    }
+
+    .refresh-button {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .refresh-button svg {
+        width: 64px;
+    }
+
+
+    /* hero */
+    .hero {
+        padding-top: 8rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero__info {
+        padding: 2rem;
+    }
+
+    .info__item .title {
+        font-size: 1rem;
+    }
+
+    .info__item .value {
+        font-size: 1.3rem;
+    }
+
+    .info__item.prize .icon {
+        width: 70px;
+        height: 67px;
+    }
+
+    .info__item.deadline .icon {
+        width: 51px;
+        height: 67px;
+    }
+
+    .hero__mountain {
+        margin-bottom: 4rem;
+        grid-template-rows: 370px 1fr 300px;
+
+        background-image: radial-gradient(circle at center, #008145 130px, transparent 350px);
+    }
+
+    .rating {
+        grid-template-rows: 370px;
+    }
+
+
+    .rating__item:not(:first-of-type) {
+        width: fit-content;
+        min-width: 8.5rem;
+        padding: 2rem .5rem .5rem;
+
+        font-size: 1.3rem;
+    }
+
+    .rating__item:not(:first-of-type)::before {
+        width: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .rating__item :where(.nick, .value) {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .rating__item .prize {
+        display: flex;
+        gap: .4rem;
+    }
+
+    .rating__item:not(:first-of-type) .cup-icon {
+        width: 1.5rem;
+    }
+
+    .rating__item.winner {
+        padding: 2rem 3rem 0;
+    }
+
+    .rating__item .bonus-icon {
+        width: 1.2rem;
+    }
+
+    .rating__item.winner .nick,
+    .rating__item.winner .prize {
+        font-size: 2rem;
+    }
+
+    .rating__item.winner .score {
+        margin-bottom: 0.3rem;
+        font-size: 1.3rem;
+    }
+
+    .rating__item.winner .cup-icon {
+        width: 3rem;
+    }
+
+    .rating__item.winner .avatar,
+    .my-place .avatar {
+        margin-top: 1.2rem;
+        width: 194px;
+    }
+
+    .rating__item .avatar::before,
+    .my-place .avatar::before {
+        width: 192px;
+        background-size: 94px 94px;
+    }
+
+    .rating__item .avatar img,
+    .my-place .avatar img {
+        width: 189px;
+        height: 210px;
+        mask-size: 189px 211px;
+    }
+
+    .hero .conditions {
+        padding-block: 168px 90px;
+    }
+
+    /* my place */
+    .my-place {
+        margin-bottom: 2rem;
+    }
+
+    .my-place__title,
+    .my-place__title>span {
+        font-size: 2rem;
+    }
+
+    .my-place .bottom-wrapper,
+    .game-wrapper {
+        background-image: linear-gradient(-16deg, #002E18, #FFFFFF);
+        box-shadow: 0 8px 40px #043E23;
+    }
+
+    .my-place .bottom {
+        padding-top: 175px;
+    }
+
+    .my-place__content {
+        padding: 2rem 4rem;
+        gap: 2rem;
+    }
+
+    .my-place .content__item {
+        gap: 1rem;
+    }
+
+    .my-place .content__item .title {
+        font-size: 1rem;
+    }
+
+    .my-place .content__item .value {
+        font-size: 1.3rem;
+    }
+
+    .to-account {
+        width: 2.5rem;
+        aspect-ratio: 1 / 1;
+    }
+
+    .to-account svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* game */
+    .game {
+        padding-block: 6rem;
+    }
+
+    .game-wrapper {
+        margin-bottom: 3.5rem;
+    }
+
+    .game__card {
+        gap: 2.5rem;
+        padding: 2rem;
+    }
+
+    .game-slogan {
+        font-size: 2rem;
+    }
+
+    .game .conditions {
+        padding: 3.5rem 4rem;
+    }
+
+    .k-download {
+        font-size: 1.3rem;
+    }
+
+    .k-download::before {
+        width: 1.3rem;
+        height: 2rem;
+    }
+    /* faq */
+    .faq {
+        padding-bottom: 11rem;
+        background-image: radial-gradient(ellipse 320px 320px, rgb(0, 129, 69, .5), transparent), linear-gradient(3deg, transparent, var(--black) 38%), url(./assets/stone-bottom.png);
+        background-repeat: no-repeat;
+        background-size: cover, cover, contain;
+        background-position: 0px -467px, center bottom, center bottom -76px;
+    }
+
+    
+.faq__decor {
+    margin-bottom: 8rem;
+    
+}
+    
+    .faq-list {
+        margin-bottom: 7rem;
+    }
+    
+    .faq-list>div button {
+        line-height: 1.3;
+        padding: 1rem;
+
+        font-size: 1rem;
+    }
+    
+    .faq-list>div:not(:last-of-type),
+    .prizes-table-content:not(:last-of-type) {
+        margin-bottom: 1rem;
+    }
+    
+    .faq-list>div .panel {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 1rem;
+        transition: max-height .5s ease-in-out, padding .5s ease-in-out
+    }
+    
+    .faq-list>div .panel :is(p, h3, li) {
+        font-size: 1rem
+    }
+    
+    .faq-list>div .panel h3 {
+        font-size: 1em;
+        margin: 0 0 .8em
+    }
+    
+    .faq-list>div .panel p:not(:last-of-type) {
+        margin-bottom: 1.2rem
+    }
+    
+    .faq-list>div.opened .panel {
+        padding: 1.5rem
+    }
+
+    .to-top-button {
+        width: 6rem;
+        margin-bottom: 3rem;
+    }
+}
