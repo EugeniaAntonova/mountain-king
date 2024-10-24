@@ -1,0 +1,48 @@
+{
+    "currentUser": {
+        "nick": "Me",
+        "bgUserToken": "EDA7038A68188EA9FD563C8DF498DF1AF8BFACBE3D50E30B6486FBBC67540316",
+        "place": 35,
+        "score": 21000,
+        "lastDate": "13.03.2023 15:50:39"
+    },
+    "allScore": 20100000,
+    "data": [{
+            "nick": "qwesfdsdfs",
+            "bgUserToken": "FCD17F006603A4315E14066908C2F11F9FB40B578949F4868B81DBB923A95D63",
+            "place": 1,
+            "score": 26000,
+            "lastDate": "09.03.2023 13:35:04"
+        },
+        {
+            "nick": "Janisdffffff",
+            "bgUserToken": "099495288DBD96D48464FE962E48403B406F22AFB0E591433AB658832A571804",
+            "place": 2,
+            "score": 18400,
+            "lastDate": "09.03.2023 14:20:43"
+        },
+        {
+            "nick": "asdertttttt",
+            "bgUserToken": "FE2844FE1822F7331B20649B01539B5DC46D8C96F84DA542E406CA0D5EF6156C",
+            "place": 3,
+            "score": 16000,
+            "lastDate": "09.03.2023 13:57:12"
+        },
+        {
+            "nick": "\u0425\u044D\u043D\u0441",
+            "bgUserToken": "8517020B054207E5DA11FA331425C5923D3025F5582FFEC0B472F1C62484D02E",
+            "place": 4,
+            "score": 55000,
+            "lastDate": "09.03.2023 14:05:10"
+        },
+        {
+            "nick": "jbsdfhjabsdflkjha",
+            "bgUserToken": "8517020B054207E5DA11FA331425C5923D3025F5582FFEC0B472F1C62484D02E",
+            "place": 4,
+            "score": 456000,
+            "lastDate": "09.03.2023 14:05:10"
+        }
+    ],
+    "status": "OK"
+}
+

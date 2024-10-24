@@ -98,6 +98,7 @@ html {
         box-shadow: 0 0 10px rgba(255 255 255 / .5);
     }
 }
+
 .k-button:active {
     filter: brightness(.9);
     box-shadow: 0 0 5px rgba(255 255 255 / .7);
@@ -151,17 +152,20 @@ html {
 }
 
 @media (hover: hover) {
-    .refresh-button:is(:hover, :focus-visible):not(:active) svg{
+    .refresh-button:is(:hover, :focus-visible):not(:active) svg {
         rotate: -20deg;
     }
-    .refresh-button:is(:hover, :focus-visible):not(:active) svg path{
+
+    .refresh-button:is(:hover, :focus-visible):not(:active) svg path {
         fill: #ffbb3d;
     }
 }
-.refresh-button:active svg{
+
+.refresh-button:active svg {
     rotate: 360deg;
 }
-.refresh-button:active svg path{
+
+.refresh-button:active svg path {
     fill: #9c6e17;
 }
 
@@ -172,14 +176,17 @@ html {
 .hero__intro {
     display: grid;
     place-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .intro__main-logo {
     width: 67vw;
-    max-width: 460px;
+    max-width: 424px;
     height: auto;
+
+    translate: 0 -100%;
+    opacity: 0;
 }
 
 .hero__info {
@@ -190,6 +197,8 @@ html {
     justify-content: center;
     background: url(./assets/net.svg) no-repeat;
     background-size: 100% 100%;
+
+    translate: -100% 0;
 }
 
 .info__item {
@@ -245,26 +254,27 @@ html {
 
 .hero__mountain {
     display: grid;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     grid-template-rows: 165px 1fr 130px;
     place-content: stretch;
 
     background-image: radial-gradient(circle at center, #008145 30px, transparent 150px);
-    background-position: 0px -85px;
+    background-position: 0px 0px;
 }
 
 .hero__mountain :where(picture, img) {
     grid-area: 2 / 1 / -1 / -1;
-    place-self: center;
+    place-self: start center;
     width: 100%;
+    max-width: 700px;
+    z-index: 2;
 }
 
 .rating {
-    counter-reset: rating-counter;
+    counter-reset: rating-counter 1;
 
-    grid-area: 1 / 1 / -1 / -1;
+    grid-area: 2 / 1 / 3 / -1;
     display: grid;
-    grid-template-rows: 165px;
     justify-items: center;
     align-items: center;
 }
@@ -275,29 +285,32 @@ html {
     display: grid;
     position: relative;
     line-height: 1.2;
+
+    opacity: 0;
+    scale: 0;
 }
 
-.rating__item:nth-of-type(2) {
-    translate: 120% 0%;
+.rating__item:nth-child(1) {
+    translate: 110% 24%;
 }
 
-.rating__item:nth-of-type(3) {
-    translate: -120% -80%;
+.rating__item:nth-child(2) {
+    translate: -100% 0%;
 }
 
-.rating__item:nth-of-type(4) {
-    translate: 100% -100%;
+.rating__item:nth-child(3) {
+    translate: 90% -7%;
 }
 
-.rating__item:nth-of-type(5) {
-    translate: -80% -190%;
+.rating__item:nth-child(4) {
+    translate: -70% -30%;
 }
 
 .rating__item.winner {
     grid-area: 1 / 1 / 2 / -1;
 }
 
-.rating__item:not(:first-of-type) {
+.rating__item:not(.winner) {
     width: fit-content;
     padding: 1.3rem .4rem .4rem;
     background-color: var(--white);
@@ -305,10 +318,11 @@ html {
 
     font-size: .8rem;
     color: var(--black);
+    z-index: 3;
 }
 
 
-.rating__item:not(:first-of-type)::before {
+.rating__item:not(.winner)::before {
     content: counter(rating-counter);
 
     position: absolute;
@@ -331,6 +345,13 @@ html {
 .rating__item :where(.nick, .value) {
     text-transform: uppercase;
     font-weight: 700;
+    min-height: 1em;
+}
+
+.rating__item:not(.winner) .nick {
+    width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rating__item .prize {
@@ -343,7 +364,7 @@ html {
     margin-left: auto;
 }
 
-.rating__item:not(:first-of-type) .cup-icon {
+.rating__item:not(.winner) .cup-icon {
     width: 1rem;
     aspect-ratio: 10 / 8;
     background-image: url(./assets/icons/cup-dark.svg);
@@ -374,6 +395,9 @@ html {
 }
 
 .rating__item.winner .nick {
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1rem;
 }
 
@@ -402,7 +426,7 @@ html {
     align-items: center;
     justify-content: center;
     width: 88px;
-    aspect-ratio: 9 / 10;
+    height: 98px;
     background: url(./assets/polygon.svg) no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -419,7 +443,7 @@ html {
     object-fit: cover;
     object-position: center center;
 
-    mask-image: url('./assets/bg.png');
+    mask-image: url('./assets/avatar-mask.svg');
     mask-size: 86px 96px;
     mask-repeat: no-repeat;
     mask-position: center;
@@ -441,17 +465,18 @@ html {
 }
 
 .hero .conditions {
+    z-index: 3;
     display: flex;
     justify-content: center;
 
-    padding-block: 100px 90px;
+    padding-block: 100px 60px;
     grid-area: 2 / 1 / 5 / -1;
 
     align-self: end;
     text-align: center;
     text-transform: uppercase;
 
-    background-image: linear-gradient(180deg, transparent 0%, rgba(18, 18, 18, 0.91) 40%);
+    background-image: linear-gradient(180deg, transparent 0%, rgba(18, 18, 18, 0.91) 52%);
 }
 
 .condition {
@@ -647,6 +672,7 @@ html {
     background-size: cover, cover, contain;
     background-position: 0px -240px, center bottom, center bottom -76px;
 }
+
 .faq .title-image {
     width: 100%;
     max-width: 482px;
@@ -656,7 +682,7 @@ html {
 
 .faq__decor {
     margin-bottom: 1.5rem;
-    
+
 }
 
 .faq-list {
@@ -769,6 +795,7 @@ html {
     margin: 0 auto;
     margin-bottom: 2rem;
 }
+
 .to-top-button svg {
     transition: .3s ease-in-out;
     pointer-events: none;
@@ -780,13 +807,16 @@ html {
     .to-top-button:is(:hover, :focus-visible) svg path {
         stroke: #03c068;
     }
+
     .to-top-button:is(:hover, :focus-visible) svg path:not(.bg) {
         fill: #03c068;
     }
 }
+
 .to-top-button:active svg path {
     stroke: #015f33;
 }
+
 .to-top-button:active svg path:not(.bg) {
     fill: #015f33;
 }
@@ -794,19 +824,19 @@ html {
 @media (min-width:500px) {
     /* hero */
 
-    .rating__item:nth-of-type(2) {
+    .rating-list .rating__item:nth-child(2) {
         translate: 148% 36%;
     }
 
-    .rating__item:nth-of-type(3) {
+    .rating-list .rating__item:nth-child(3) {
         translate: -120% -80%;
     }
 
-    .rating__item:nth-of-type(4) {
+    .rating-list .rating__item:nth-child(4) {
         translate: 124% -116%;
     }
 
-    .rating__item:nth-of-type(5) {
+    .rating-list .rating__item:nth-child(5) {
         translate: -86% -224%;
     }
 }
@@ -832,20 +862,20 @@ html {
         width: 80px;
         height: 80px;
     }
-    
+
     .refresh-button svg {
-        width: 64px;
+        width: 59px;
     }
 
 
     /* hero */
     .hero {
-        padding-top: 8rem;
+        padding-top: 4rem;
         margin-bottom: 2rem;
     }
 
     .hero__info {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .info__item .title {
@@ -868,17 +898,13 @@ html {
 
     .hero__mountain {
         margin-bottom: 4rem;
-        grid-template-rows: 370px 1fr 300px;
+        grid-template-rows: 370px 1fr 186px;
 
         background-image: radial-gradient(circle at center, #008145 130px, transparent 350px);
     }
 
-    .rating {
-        grid-template-rows: 370px;
-    }
 
-
-    .rating__item:not(:first-of-type) {
+    .rating__item:not(.winner) {
         width: fit-content;
         min-width: 8.5rem;
         padding: 2rem .5rem .5rem;
@@ -886,7 +912,7 @@ html {
         font-size: 1.3rem;
     }
 
-    .rating__item:not(:first-of-type)::before {
+    .rating__item:not(.winner)::before {
         width: 3.5rem;
         font-size: 2.5rem;
     }
@@ -901,7 +927,7 @@ html {
         gap: .4rem;
     }
 
-    .rating__item:not(:first-of-type) .cup-icon {
+    .rating__item:not(.winner) .cup-icon {
         width: 1.5rem;
     }
 
@@ -931,6 +957,7 @@ html {
     .my-place .avatar {
         margin-top: 1.2rem;
         width: 194px;
+        height: 218px;
     }
 
     .rating__item .avatar::before,
@@ -941,9 +968,9 @@ html {
 
     .rating__item .avatar img,
     .my-place .avatar img {
-        width: 189px;
-        height: 210px;
-        mask-size: 189px 211px;
+        width: 192px;
+        height: 216px;
+        mask-size: 192px 216px;
     }
 
     .hero .conditions {
@@ -1027,6 +1054,7 @@ html {
         width: 1.3rem;
         height: 2rem;
     }
+
     /* faq */
     .faq {
         padding-bottom: 11rem;
@@ -1036,28 +1064,28 @@ html {
         background-position: 0px -467px, center bottom, center bottom -76px;
     }
 
-    
-.faq__decor {
-    margin-bottom: 8rem;
-    
-}
-    
+
+    .faq__decor {
+        margin-bottom: 8rem;
+
+    }
+
     .faq-list {
         margin-bottom: 7rem;
     }
-    
+
     .faq-list>div button {
         line-height: 1.3;
         padding: 1rem;
 
         font-size: 1rem;
     }
-    
+
     .faq-list>div:not(:last-of-type),
     .prizes-table-content:not(:last-of-type) {
         margin-bottom: 1rem;
     }
-    
+
     .faq-list>div .panel {
         padding: 0 1.5rem;
         max-height: 0;
@@ -1065,20 +1093,20 @@ html {
         font-size: 1rem;
         transition: max-height .5s ease-in-out, padding .5s ease-in-out
     }
-    
+
     .faq-list>div .panel :is(p, h3, li) {
         font-size: 1rem
     }
-    
+
     .faq-list>div .panel h3 {
         font-size: 1em;
         margin: 0 0 .8em
     }
-    
+
     .faq-list>div .panel p:not(:last-of-type) {
         margin-bottom: 1.2rem
     }
-    
+
     .faq-list>div.opened .panel {
         padding: 1.5rem
     }
