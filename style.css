@@ -610,7 +610,7 @@ html {
 }
 
 .game__logo {
-    width: 100%;
+    width: 45%;
     max-width: 340px;
     height: auto;
 }
@@ -674,14 +674,14 @@ html {
 }
 
 .faq .title-image {
-    width: 100%;
+    width: 74%;
     max-width: 482px;
     height: auto;
     margin: 0 auto;
 }
 
 .faq__decor {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 
 }
 
